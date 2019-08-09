@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Patch>
-  
-   <Operation Class="PatchOperationAddModExtension">
-    <xpath>/Defs/PawnKindDef[defName="Cults_Sailor"]</xpath>
-    <value>
-      <li Class="CombatExtended.LoadoutPropertiesExtension">
-        <primaryMagazineCount>
-          <min>3</min>
-          <max>5</max>
-        </primaryMagazineCount>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationAddModExtension">
+        <xpath>/Defs/PawnKindDef[defName="Cults_Sailor"]</xpath>
+        <value>
+          <li Class="CombatExtended.LoadoutPropertiesExtension">
+            <primaryMagazineCount>
+              <min>3</min>
+              <max>5</max>
+            </primaryMagazineCount>
+          </li>
+        </value>
       </li>
-    </value>
+      
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName="Cults_BlackGoat"]/lifeStages/li[1]/dessicatedBodyGraphicData</xpath>
+				<value>
+					<dessicatedBodyGraphicData>
+						<texPath>Things/Pawn/Animal/Ibex/Dessicated_IbexFemale</texPath>
+						<drawSize>1.3</drawSize>
+					</dessicatedBodyGraphicData>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName="Cults_BlackGoat"]/lifeStages/li[2]/dessicatedBodyGraphicData</xpath>
+				<value>
+					<dessicatedBodyGraphicData>
+						<texPath>Things/Pawn/Animal/Ibex/Dessicated_IbexFemale</texPath>
+						<drawSize>1.6</drawSize>
+					</dessicatedBodyGraphicData>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName="Cults_BlackGoat"]/lifeStages/li[3]/dessicatedBodyGraphicData</xpath>
+				<value>
+					<dessicatedBodyGraphicData>
+						<texPath>Things/Pawn/Animal/Ibex/Dessicated_IbexFemale</texPath>
+						<drawSize>2.0</drawSize>
+					</dessicatedBodyGraphicData>
+				</value>
+			</li>
+    </operations>
   </Operation>
-  
 </Patch>
